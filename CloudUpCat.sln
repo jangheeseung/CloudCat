@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DF01885B-5951-B23B-F106-2FB906E04883}") = "CloudUpCat", "Assembly-CSharp.csproj", "{EF07F591-469D-4820-0791-D5BD40957EBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF07F591-469D-4820-0791-D5BD40957EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF07F591-469D-4820-0791-D5BD40957EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF07F591-469D-4820-0791-D5BD40957EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF07F591-469D-4820-0791-D5BD40957EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
