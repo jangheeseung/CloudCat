@@ -65,8 +65,19 @@ public class PlayerController2 : MonoBehaviour {
 		} */
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("골");
-		SceneManager.LoadScene ("FinishScene");
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		GameObject flag = GameObject.Find ("flag");
+		GameObject blackhall = GameObject.Find ("blackhall");
+		if (other.gameObject.Equals (flag)) {
+
+			Debug.Log ("골");
+			SceneManager.LoadScene ("ClearScene2");
+		}
+
+		if (other.gameObject.Equals (blackhall)) {
+			transform.position = new Vector3 (0, 0, 0);
+		}
+			
 	}
 }

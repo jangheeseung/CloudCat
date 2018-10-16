@@ -9,6 +9,8 @@ public class PlayerController1 : MonoBehaviour {
 	float jumpforce = 680.0f;
 	float walkForce=30.0f;
 	float maxWalkSpeed=2.0f;
+	float delta=0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -53,8 +55,23 @@ public class PlayerController1 : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("골");
-		SceneManager.LoadScene ("ClearScene2");
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		GameObject flag = GameObject.Find ("flag");
+		GameObject blackhall = GameObject.Find ("blackhall");
+		GameObject fishPrefab = GameObject.Find ("fishPrefab");
+		if (other.gameObject.Equals (flag)) {
+			
+			Debug.Log ("골");
+			SceneManager.LoadScene ("ClearScene2");
+		}
+
+		if (other.gameObject.Equals (blackhall)) {
+			transform.position = new Vector3 (0, 0, 0);
+		}
+
+		//if(other.gameObject.Equals(fishPrefab)){
+			//jumpforce = 1000.0f;
+	//	}
 	}
 }

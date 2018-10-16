@@ -14,6 +14,10 @@ public class GameDirector : MonoBehaviour {
 		this.hpGage.GetComponent<Image> ().fillAmount -= 0.1f;
 	}
 	// Update is called once per frame
+
+	public void IncreaseHP(){
+		this.hpGage.GetComponent<Image> ().fillAmount += 0.1f;
+	}
 	void Update () {
 
 	}

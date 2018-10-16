@@ -16,15 +16,16 @@ public class BookController : MonoBehaviour {
 		if (transform.position.y < -10.0f) {
 			Destroy(gameObject);
 		}
+			
+	}
 
-		Vector2 p1 = transform.position;
-		Vector2 p2 = this.cat.transform.position;
-		Vector2 dir = p1 - p2;
-		float d = dir.magnitude;
-		float r1 = 0.3f;
-		float r2 = 0.5f;
 
-		if (d < r1 + r2) {
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		GameObject flag = GameObject.Find ("cat");
+
+		if (other.gameObject.Equals (cat)) {
+
 			Destroy (gameObject);
 
 			GameObject director = GameObject.Find ("GameDirector");
