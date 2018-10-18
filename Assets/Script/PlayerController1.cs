@@ -70,8 +70,8 @@ public class PlayerController1 : MonoBehaviour {
 			transform.position = new Vector3 (0, 0, 0);
 		}
 
-		//if(other.gameObject.Equals(fishPrefab)){
+		if(other.gameObject.Equals(fishPrefab)){
 			//jumpforce = 1000.0f;
-	//	}
+		}
 	}
 }

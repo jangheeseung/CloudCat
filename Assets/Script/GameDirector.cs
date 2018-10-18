@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour {
 
@@ -18,7 +19,13 @@ public class GameDirector : MonoBehaviour {
 	public void IncreaseHP(){
 		this.hpGage.GetComponent<Image> ().fillAmount += 0.1f;
 	}
-	void Update () {
 
+	public void slowHP(){
+		this.hpGage.GetComponent<Image> ().fillAmount -= 0.05f;
+	}
+	void Update () {
+		if(hpGage.GetComponent<Image>().fillAmount==0)
+			SceneManager.LoadScene ("ClearScene");
+			
 	}
 } 

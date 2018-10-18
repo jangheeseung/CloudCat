@@ -62,7 +62,7 @@ public class PlayerController2 : MonoBehaviour {
 		if(pTransform.position == 특정위치)
 		{ 
 			transform.parent = null;
-		} */
+		}*/ 
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -76,7 +76,7 @@ public class PlayerController2 : MonoBehaviour {
 		}
 
 		if (other.gameObject.Equals (blackhall)) {
-			transform.position = new Vector3 (0, 0, 0);
+			transform.position = new Vector3 (0, -2, 0);
 		}
 			
 	}

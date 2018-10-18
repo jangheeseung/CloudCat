@@ -25,7 +25,7 @@ public class BookController : MonoBehaviour {
 		GameObject flag = GameObject.Find ("cat");
 
 		if (other.gameObject.Equals (cat)) {
-
+		
 			Destroy (gameObject);
 
 			GameObject director = GameObject.Find ("GameDirector");
