@@ -11,7 +11,7 @@ public class EatFish : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-
+		GameObject director = GameObject.Find ("PlayerController2");
 			
 	}
 
@@ -20,6 +20,7 @@ public class EatFish : MonoBehaviour {
 		if (other.gameObject.Equals (cat)) {
 			GetComponent<AudioSource>().Play();
 			Destroy (gameObject,0.2f);
+
 		}
 	}
 }

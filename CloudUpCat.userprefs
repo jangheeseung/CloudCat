@@ -1,16 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\RainMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Sun.cs">
     <Files>
-      <File FileName="Assets\Script\RainMove.cs" Line="28" Column="3" />
-      <File FileName="Assets\Script\GameDirector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\BlueCloud.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\CloudMove_up.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\CloudMove1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PencliController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PlayerController1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PlayerController2.cs" Line="75" Column="40" />
-      <File FileName="Assets\Script\EatFish.cs" Line="21" Column="39" />
+      <File FileName="Assets\Script\RedCloud.cs" Line="24" Column="2" />
+      <File FileName="Assets\Script\Sun.cs" Line="23" Column="3" />
+      <File FileName="Assets\Script\RainMove.cs" Line="28" Column="23" />
+      <File FileName="Assets\Script\GameDirector.cs" Line="24" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

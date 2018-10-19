@@ -10,7 +10,7 @@ public class PlayerController1 : MonoBehaviour {
 	float walkForce=30.0f;
 	float maxWalkSpeed=2.0f;
 	float delta=0;
-
+	//bool jump=true;
 
 	// Use this for initialization
 	void Start () {
@@ -70,8 +70,10 @@ public class PlayerController1 : MonoBehaviour {
 			transform.position = new Vector3 (0, 0, 0);
 		}
 
-		if(other.gameObject.Equals(fishPrefab)){
-			//jumpforce = 1000.0f;
-		}
+	//	if (other.gameObject.Equals (fishPrefab)) {
+	//		jumpforce=1000.0f
+				//jump = false;
+		
+//	}
 	}
 }

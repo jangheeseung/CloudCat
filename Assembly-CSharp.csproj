@@ -64,6 +64,8 @@
      <Compile Include="Assets\Script\PlayerController1.cs" />
      <Compile Include="Assets\Script\PlayerController2.cs" />
      <Compile Include="Assets\Script\RainMove.cs" />
+     <Compile Include="Assets\Script\RedCloud.cs" />
+     <Compile Include="Assets\Script\Sun.cs" />
      <Compile Include="Assets\Script\bookGenerator.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

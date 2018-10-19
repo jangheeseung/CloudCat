@@ -10,6 +10,7 @@ public class RainMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		back = 1;
+		this.cat=GameObject.Find("cat");
 	}
 
 	// Update is called once per frame
@@ -24,12 +25,11 @@ public class RainMove : MonoBehaviour {
 		}
 	}
 		
-	void OnTriggerStay2D (Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.Equals (cat)) {
-			
 			GameObject director = GameObject.Find ("GameDirector");
-			director.GetComponent<GameDirector> ().DecreaseHP ();
+			director.GetComponent<GameDirector> ().slowHP();
 		}
 	}
 }

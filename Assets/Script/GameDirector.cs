@@ -20,9 +20,14 @@ public class GameDirector : MonoBehaviour {
 		this.hpGage.GetComponent<Image> ().fillAmount += 0.1f;
 	}
 
-	public void slowHP(){
-		this.hpGage.GetComponent<Image> ().fillAmount -= 0.05f;
+	public void upHP(){
+		this.hpGage.GetComponent<Image> ().fillAmount += 0.003f;
 	}
+
+	public void slowHP(){
+		this.hpGage.GetComponent<Image> ().fillAmount -= 0.003f;
+	}
+
 	void Update () {
 		if(hpGage.GetComponent<Image>().fillAmount==0)
 			SceneManager.LoadScene ("ClearScene");
