@@ -11,11 +11,13 @@ public class PlayerController2 : MonoBehaviour {
 	float jumpforce = 680.0f;
 	float walkForce=30.0f;
 	float maxWalkSpeed=2.0f;
+	public Transform pTransform;
 
 	// Use this for initialization
 	void Start () {
 		this.rigid2d = GetComponent<Rigidbody2D> ();
 		this.animator = GetComponent<Animator> ();
+		GameObject director = GameObject.Find ("CloudMove1");
 	}
 	// Update is called once per frame
 	void Update () {
@@ -55,14 +57,12 @@ public class PlayerController2 : MonoBehaviour {
 		}
 		/*if(transform.position == pTransform.position)
 		{ 
-			GameObject director = GameObject.Find ("Clou");
 			transform.parent = pTransform; 
 		} 
-
-		if(pTransform.position == 특정위치)
+		if(pTransform.position==)
 		{ 
 			transform.parent = null;
-		}*/ 
+		}*/
 	}
 
 	void OnTriggerEnter2D (Collider2D other)

@@ -26,6 +26,7 @@ public class HeartController : MonoBehaviour {
 
 		if (other.gameObject.Equals (cat)) {
 
+			//GetComponent<AudioSource>().Play();
 			Destroy (gameObject);
 
 			GameObject director = GameObject.Find ("GameDirector");

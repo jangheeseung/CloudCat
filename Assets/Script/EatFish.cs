@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
+
 public class EatFish : MonoBehaviour {
 	GameObject cat;
 	// Use this for initialization

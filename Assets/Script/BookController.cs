@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class BookController : MonoBehaviour {
 
@@ -26,6 +27,7 @@ public class BookController : MonoBehaviour {
 
 		if (other.gameObject.Equals (cat)) {
 		
+	//		GetComponent<AudioSource>().Play();
 			Destroy (gameObject);
 
 			GameObject director = GameObject.Find ("GameDirector");

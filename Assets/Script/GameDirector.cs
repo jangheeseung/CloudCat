@@ -30,7 +30,7 @@ public class GameDirector : MonoBehaviour {
 
 	void Update () {
 		if(hpGage.GetComponent<Image>().fillAmount==0)
-			SceneManager.LoadScene ("ClearScene");
+			SceneManager.LoadScene ("GameOverScene");
 			
 	}
 } 
