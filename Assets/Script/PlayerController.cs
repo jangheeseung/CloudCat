@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	GameObject player;
 	GameObject flag;
 	GameObject blackhall;
+	bool fishjump=false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,13 +22,27 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
-			this.animator.SetTrigger ("JumpTrigger");
-			this.rigid2d.AddForce (transform.up * jumpforce);
+		if (fishjump == false) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * jumpforce);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * this.jumpforce);
+				GetComponent<AudioSource> ().Play ();
+			}
 		}
-		if (Input.GetKeyDown (KeyCode.Space)&&this.rigid2d.velocity.y==0) {
-			this.rigid2d.AddForce (transform.up * this.jumpforce);
-			GetComponent<AudioSource> ().Play ();
+
+		if (fishjump == true) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+				GetComponent<AudioSource> ().Play ();
+				fishjump = false;
+			}
 		}
 
 		int key=0;
@@ -57,8 +72,21 @@ public class PlayerController : MonoBehaviour {
 	}
 		
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("골");
-		SceneManager.LoadScene ("ClearScene");
-	}
+		
+		GameObject flag = GameObject.Find ("flag");
+		GameObject blackhall = GameObject.Find ("blackhall");
+		GameObject fishPrefab = GameObject.Find ("fishPrefab");
+		if (other.gameObject.Equals (flag)) {
+			Debug.Log ("골");
+			SceneManager.LoadScene ("ClearScene");
+		}
 
+		if (other.gameObject.Equals (blackhall)) {
+			transform.position = new Vector3 (0, 0, 0);
+		}
+			
+	}
+	public void FishJump(){
+		fishjump = true;
+	}
 }

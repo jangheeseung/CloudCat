@@ -11,7 +11,8 @@ public class PlayerController2 : MonoBehaviour {
 	float jumpforce = 680.0f;
 	float walkForce=30.0f;
 	float maxWalkSpeed=2.0f;
-	public Transform pTransform;
+	//public Transform pTransform;
+	bool fishjump=false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,15 +23,28 @@ public class PlayerController2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
-			this.animator.SetTrigger ("Jump");
-			this.rigid2d.AddForce (transform.up * jumpforce);
-		}
-		if (Input.GetKeyDown (KeyCode.Space)&&this.rigid2d.velocity.y==0) {
-			this.rigid2d.AddForce (transform.up * this.jumpforce);
-			GetComponent<AudioSource> ().Play ();
+		if (fishjump == false) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * jumpforce);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * this.jumpforce);
+				GetComponent<AudioSource> ().Play ();
+			}
 		}
 
+		if (fishjump == true) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+				GetComponent<AudioSource> ().Play ();
+				fishjump = false;
+			}
+		}
 		int key=0;
 		if(Input.GetKey(KeyCode.RightArrow)) key =1;
 		if(Input.GetKey(KeyCode.LeftArrow)) key =-1;
@@ -72,12 +86,15 @@ public class PlayerController2 : MonoBehaviour {
 		if (other.gameObject.Equals (flag)) {
 
 			Debug.Log ("골");
-			SceneManager.LoadScene ("ClearScene2");
+			SceneManager.LoadScene ("FinishScene");
 		}
 
 		if (other.gameObject.Equals (blackhall)) {
-			transform.position = new Vector3 (0, -2, 0);
+			transform.position = new Vector3 (0, -3, 0);
 		}
 			
+	}
+	public void FishJump(){
+		fishjump = true;
 	}
 }

@@ -10,6 +10,7 @@ public class PlayerController1 : MonoBehaviour {
 	float walkForce=30.0f;
 	float maxWalkSpeed=2.0f;
 	float delta=0;
+	bool fishjump=false;
 	//bool jump=true;
 
 	// Use this for initialization
@@ -20,15 +21,16 @@ public class PlayerController1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
-			this.animator.SetTrigger ("Jump");
-			this.rigid2d.AddForce (transform.up * jumpforce);
+		if (fishjump == false) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * jumpforce);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * this.jumpforce);
+				GetComponent<AudioSource> ().Play ();
+			}
 		}
-		if (Input.GetKeyDown (KeyCode.Space)&&this.rigid2d.velocity.y==0) {
-			this.rigid2d.AddForce (transform.up * this.jumpforce);
-			GetComponent<AudioSource> ().Play ();
-		}
-
 		int key=0;
 		if(Input.GetKey(KeyCode.RightArrow)) key =1;
 		if(Input.GetKey(KeyCode.LeftArrow)) key =-1;
@@ -53,6 +55,18 @@ public class PlayerController1 : MonoBehaviour {
 		if(transform.position.y<-10){
 			SceneManager.LoadScene("GameScene2");
 		}
+
+		if (fishjump == true) {
+			if (Input.GetMouseButton (0) && this.rigid2d.velocity.y == 0) {
+				this.animator.SetTrigger ("Jump");
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+			}
+			if (Input.GetKeyDown (KeyCode.Space) && this.rigid2d.velocity.y == 0) {
+				this.rigid2d.AddForce (transform.up * 1000.0f);
+				GetComponent<AudioSource> ().Play ();
+				fishjump = false;
+			}
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -70,10 +84,9 @@ public class PlayerController1 : MonoBehaviour {
 			transform.position = new Vector3 (0, 0, 0);
 		}
 
-	//	if (other.gameObject.Equals (fishPrefab)) {
-	//		jumpforce=1000.0f
-				//jump = false;
-		
-//	}
+	}
+
+	public void FishJump(){
+		fishjump = true;
 	}
 }

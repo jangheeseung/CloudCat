@@ -54,8 +54,11 @@
      <Compile Include="Assets\Script\CloudMove1.cs" />
      <Compile Include="Assets\Script\CloudMove_up.cs" />
      <Compile Include="Assets\Script\EatFish.cs" />
+     <Compile Include="Assets\Script\Eatfish2.cs" />
+     <Compile Include="Assets\Script\Eatfish3.cs" />
      <Compile Include="Assets\Script\FinishDirector.cs" />
      <Compile Include="Assets\Script\GameDirector.cs" />
+     <Compile Include="Assets\Script\Gameover.cs" />
      <Compile Include="Assets\Script\HeartController.cs" />
      <Compile Include="Assets\Script\HeartGenerat.cs" />
      <Compile Include="Assets\Script\PencilGenractor.cs" />
